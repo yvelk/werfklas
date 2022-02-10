@@ -21,14 +21,17 @@ steps:
     command: 'custom'
     customCommand: 'install -g @angular/cli@13.2.2'
 
-- task: Npm@1
-  displayName: NPM Install
-  inputs:
-    command: 'install'
+# - task: Npm@1
+#   displayName: NPM Install
+#   inputs:
+#     command: 'install'
+
+# - script: |
+#     npm run build
+#   displayName: NPM Build
 
 - script: |
-    npm run build
-  displayName: NPM Build
+    ./mvnw -Pprod clean verify
 
 - task: CopyFiles@2
   displayName: 'Copy Files to: $(build.artifactstagingdirectory)'
