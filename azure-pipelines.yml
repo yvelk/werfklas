@@ -30,6 +30,16 @@ steps:
     npm run build
   displayName: NPM Build
 
+- task: CopyFiles@2
+  displayName: 'Copy Files to: $(build.artifactstagingdirectory)'
+  inputs:
+    flattenFolders: true
+    SourceFolder: '$(system.defaultworkingdirectory)'
+    Contents: |
+      *.jar
+    TargetFolder: '$(build.artifactstagingdirectory)'
+  condition: succeeded()
+
 - task: PublishBuildArtifacts@1
   inputs:
     PathtoPublish: '$(Build.ArtifactStagingDirectory)'
