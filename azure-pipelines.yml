@@ -26,11 +26,8 @@ steps:
   inputs:
     command: 'install'
 
-- task: Npm@1
-  displayName: NPM Build
-  inputs:
-    command: 'custom'
-    customCommand: 'run build'
+- script: |
+    ng build --prod
 
 - task: PublishBuildArtifacts@1
   inputs:
