@@ -36,7 +36,7 @@ steps:
     flattenFolders: true
     SourceFolder: '$(system.defaultworkingdirectory)'
     Contents: |
-      *.jar
+      *.*
     TargetFolder: '$(build.artifactstagingdirectory)'
   condition: succeeded()
 
