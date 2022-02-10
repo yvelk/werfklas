@@ -27,7 +27,7 @@ steps:
     command: 'install'
 
 - script: |
-    npm run build:prod
+    npm run build
   displayName: NPM Build
 
 - task: PublishBuildArtifacts@1
