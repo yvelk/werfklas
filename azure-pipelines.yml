@@ -6,7 +6,7 @@
 trigger:
 - main
 
-pool: default
+pool: azure-pipelines
 
 steps:
 - task: NodeTool@0
@@ -29,12 +29,6 @@ steps:
 # - script: |
 #     npm run build
 #   displayName: NPM Build
-- task: JavaToolInstaller@0
-  inputs:
-    versionSpec: '11'
-    jdkArchitectureOption: 'x64'
-    jdkSourceOption: 'PreInstalled'
-
 - script: |
     $(system.defaultworkingdirectory)/mvnw -Pprod clean verify
 
