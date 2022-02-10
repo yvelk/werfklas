@@ -31,7 +31,7 @@ steps:
 #   displayName: NPM Build
 
 - script: |
-    ./mvnw -Pprod clean verify
+    $(system.defaultworkingdirectory)/mvnw -Pprod clean verify
 
 - task: CopyFiles@2
   displayName: 'Copy Files to: $(build.artifactstagingdirectory)'
