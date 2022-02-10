@@ -31,7 +31,7 @@ steps:
   displayName: NPM Build
   inputs:
     command: 'custom'
-    customCommand: 'run prod-build'
+    customCommand: 'run build'
 
 - task: PublishBuildArtifacts@1
   inputs:
