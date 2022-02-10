@@ -7,7 +7,7 @@ trigger:
 - main
 
 pool:
-  vmImage: ubuntu-latest
+  vmImage: default
 
 steps:
 - task: NodeTool@0
@@ -31,7 +31,7 @@ steps:
   displayName: NPM Build
   inputs:
     command: 'custom'
-    customCommand: 'run build -- --prod'
+    customCommand: 'run build'
 
 - task: PublishBuildArtifacts@1
   inputs:
