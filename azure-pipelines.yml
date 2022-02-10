@@ -34,7 +34,7 @@ steps:
   displayName: 'Copy Files to: $(build.artifactstagingdirectory)'
   inputs:
     flattenFolders: true
-    SourceFolder: '$(system.defaultworkingdirectory)'
+    SourceFolder: '$(system.defaultworkingdirectory)/target'
     Contents: |
       *.*
     TargetFolder: '$(build.artifactstagingdirectory)'
